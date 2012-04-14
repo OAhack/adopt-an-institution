@@ -1,4 +1,4 @@
-# Adopt-an-Institution[travis] [![Dependency Status](https://gemnasium.com/codeforamerica/adopt-a-hydrant.png?travis)][gemnasium]
+# Adopt-an-Institution [![Dependency Status](https://gemnasium.com/codeforamerica/adopt-a-hydrant.png?travis)][gemnasium]
 A fork of Adopt-a-Hydrant to enable people to indicate their interest in pursuing an open access policy at their research institution.
 
 [gemnasium]: https://gemnasium.com/codeforamerica/adopt-a-hydrant
