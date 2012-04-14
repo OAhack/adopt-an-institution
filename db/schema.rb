@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 6) do
+ActiveRecord::Schema.define(:version => 7) do
 
   create_table "rails_admin_histories", :force => true do |t|
     t.string   "message"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(:version => 6) do
   end
 
   add_index "things", ["city_id"], :name => "index_things_on_city_id", :unique => true
+
+  create_table "things_users", :force => true do |t|
+    t.integer "thing_id"
+    t.integer "user_id"
+  end
+
+  add_index "things_users", ["thing_id", "user_id"], :name => "index_things_users_on_thing_id_and_user_id"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at"
