@@ -1,23 +1,17 @@
-# Adopt-a-Hydrant [![Build Status](https://secure.travis-ci.org/codeforamerica/adopt-a-hydrant.png?branch=master)][travis] [![Dependency Status](https://gemnasium.com/codeforamerica/adopt-a-hydrant.png?travis)][gemnasium]
-Claim responsibility for shoveling out a fire hydrant after it snows.
+# Adopt-an-Institution[travis] [![Dependency Status](https://gemnasium.com/codeforamerica/adopt-a-hydrant.png?travis)][gemnasium]
+A fork of Adopt-a-Hydrant to enable people to indicate their interest in pursuing an open access policy at their research institution.
 
-[travis]: http://travis-ci.org/codeforamerica/adopt-a-hydrant
 [gemnasium]: https://gemnasium.com/codeforamerica/adopt-a-hydrant
 
 ## <a name="screenshots"></a>Screenshot
-![Adopt-a-Hydrant](https://github.com/codeforamerica/adopt-a-hydrant/raw/master/screenshot.png "Adopt-a-Hydrant")
-
-## <a name="demo"></a>Demo
-You can see a running version of the application at
-[http://adopt-a-hydrant.herokuapp.com/][demo].
-
-[demo]: http://adopt-a-hydrant.herokuapp.com/
+Screenshot 
+![Adopt-a-Hydrant](https://github.com/bensheldon/adopt-an-institution/raw/master/screenshot.png "Adopt-a-Hydrant")
 
 ## <a name="installation"></a>Installation
 This application requires [Postgres](http://www.postgresql.org/) to be installed
 
-    git clone git://github.com/codeforamerica/adopt-a-hydrant.git
-    cd adopt-a-hydrant
+    git clone git://github.com/bensheldon/adopt-an-institution.git
+    cd adopt-an-institution
     bundle install
 
     bundle exec rake db:create
