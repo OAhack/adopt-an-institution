@@ -2,6 +2,8 @@ class InfoWindowController < ApplicationController
   def index
     @thing = Thing.find_by_id(params[:thing_id])
     if @thing.adopted?
+      @user = User.find_by_id(@thing.user_id)
+      
       if user_signed_in? && current_user.id == @thing.user_id
         render("users/thank_you")
       else
