@@ -40,6 +40,11 @@ $(function() {
   var activeInfoWindow;
   var isWindowOpen = false;
   var thingIds = [];
+  
+  // for INIT
+  var initCenter = map.getCenter();
+  addMarkersAround(center.lat(), center.lng());
+  
   function addMarker(thingId, point, color) {
     if(color == 'green') {
       var image = greenMarkerImage;
