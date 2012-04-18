@@ -20,7 +20,7 @@ $(function() {
   var size = new google.maps.Size(27.0, 37.0);
   var origin = new google.maps.Point(0, 0);
   var anchor = new google.maps.Point(13.0, 18.0);
-  var adoptedMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/adoped.png' %>',
+  var adoptedMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/adopted.png' %>',
     size,
     origin,
     anchor
@@ -45,10 +45,10 @@ $(function() {
   var initCenter = map.getCenter();
   addMarkersAround(center.lat(), center.lng());
   
-  function addMarker(thingId, point, color) {
-    if(color == 'green') {
-      var image = adoptedMarkerImageImage;
-    } else if(color == 'red') {
+  function addMarker(thingId, point, status) {
+    if(status == 'adopted') {
+      var image = adoptedMarkerImage;
+    } else if(status == 'notAdopted') {
       var image = notAdoptedMarkerImage;
     }
     var marker = new google.maps.Marker({
@@ -122,11 +122,11 @@ $(function() {
             setTimeout(function() {
               var point = new google.maps.LatLng(thing.lat, thing.lng);
               if(thing.user_id) {
-                var color = 'green';
+                var status = 'adopted';
               } else {
-                var color = 'red';
+                var status = 'notAdopted';
               }
-              addMarker(thing.id, point, color);
+              addMarker(thing.id, point, status);
             }, i * 100);
           });
         }
