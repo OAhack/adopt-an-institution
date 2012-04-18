@@ -20,12 +20,12 @@ $(function() {
   var size = new google.maps.Size(27.0, 37.0);
   var origin = new google.maps.Point(0, 0);
   var anchor = new google.maps.Point(13.0, 18.0);
-  var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>',
+  var adoptedMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/adoped.png' %>',
     size,
     origin,
     anchor
   );
-  var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>',
+  var notAdoptedMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/not-adopted.png' %>',
     size,
     origin,
     anchor
@@ -47,9 +47,9 @@ $(function() {
   
   function addMarker(thingId, point, color) {
     if(color == 'green') {
-      var image = greenMarkerImage;
+      var image = adoptedMarkerImageImage;
     } else if(color == 'red') {
-      var image = redMarkerImage;
+      var image = notAdoptedMarkerImage;
     }
     var marker = new google.maps.Marker({
       animation: google.maps.Animation.DROP,
@@ -411,7 +411,7 @@ $(function() {
             activeInfoWindow.close();
             activeInfoWindow.setContent(data);
             activeInfoWindow.open(map, activeMarker);
-            activeMarker.setIcon(greenMarkerImage);
+            activeMarker.setIcon(adoptedMarkerImage);
             activeMarker.setAnimation(google.maps.Animation.BOUNCE);
           }
         });
@@ -454,7 +454,7 @@ $(function() {
               activeInfoWindow.close();
               activeInfoWindow.setContent(data);
               activeInfoWindow.open(map, activeMarker);
-              activeMarker.setIcon(redMarkerImage);
+              activeMarker.setIcon(notAdoptedMarkerImage);
               activeMarker.setAnimation(null);
             }
           });
