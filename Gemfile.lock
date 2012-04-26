@@ -74,6 +74,7 @@ GEM
     geokit (1.6.5)
       multi_json
     haml (3.2.0.alpha.10)
+    high_voltage (1.1.1)
     hike (1.2.1)
     hpricot (0.8.6)
     http_accept_language (1.0.2)
@@ -172,6 +173,7 @@ DEPENDENCIES
   fastercsv
   geokit
   haml (~> 3.2.0.alpha)
+  high_voltage
   http_accept_language
   pg
   rails (~> 3.2)

@@ -6,6 +6,8 @@ gem 'arel'
 gem 'devise'
 gem 'geokit'
 gem 'haml', '~> 3.2.0.alpha'
+# high-voltage for static pages
+gem 'high_voltage'
 gem 'http_accept_language'
 gem 'pg'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
