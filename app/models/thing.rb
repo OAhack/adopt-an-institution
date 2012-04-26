@@ -1,6 +1,5 @@
 class Thing < ActiveRecord::Base
   include Geokit::Geocoders
-  validates_uniqueness_of :city_id, :allow_nil => true
   validates_presence_of :lat, :lng
   has_and_belongs_to_many :user
   has_many :reminders

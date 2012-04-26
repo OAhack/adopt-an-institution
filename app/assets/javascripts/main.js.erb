@@ -20,12 +20,12 @@ $(function() {
   var size = new google.maps.Size(27.0, 37.0);
   var origin = new google.maps.Point(0, 0);
   var anchor = new google.maps.Point(13.0, 18.0);
-  var greenMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/green.png' %>',
+  var adoptedMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/adopted.png' %>',
     size,
     origin,
     anchor
   );
-  var redMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/red.png' %>',
+  var notAdoptedMarkerImage = new google.maps.MarkerImage('<%= image_path 'markers/not-adopted.png' %>',
     size,
     origin,
     anchor
@@ -40,11 +40,16 @@ $(function() {
   var activeInfoWindow;
   var isWindowOpen = false;
   var thingIds = [];
-  function addMarker(thingId, point, color) {
-    if(color == 'green') {
-      var image = greenMarkerImage;
-    } else if(color == 'red') {
-      var image = redMarkerImage;
+  
+  // for INIT
+  var initCenter = map.getCenter();
+  addMarkersAround(center.lat(), center.lng());
+  
+  function addMarker(thingId, point, status) {
+    if(status == 'adopted') {
+      var image = adoptedMarkerImage;
+    } else if(status == 'notAdopted') {
+      var image = notAdoptedMarkerImage;
     }
     var marker = new google.maps.Marker({
       animation: google.maps.Animation.DROP,
@@ -117,11 +122,11 @@ $(function() {
             setTimeout(function() {
               var point = new google.maps.LatLng(thing.lat, thing.lng);
               if(thing.user_id) {
-                var color = 'green';
+                var status = 'adopted';
               } else {
-                var color = 'red';
+                var status = 'notAdopted';
               }
-              addMarker(thing.id, point, color);
+              addMarker(thing.id, point, status);
             }, i * 100);
           });
         }
@@ -164,7 +169,7 @@ $(function() {
             addMarkersAround(data[0], data[1]);
             var center = new google.maps.LatLng(data[0], data[1]);
             map.setCenter(center);
-            map.setZoom(19);
+            map.setZoom(9);
           }
         }
       });
@@ -406,7 +411,7 @@ $(function() {
             activeInfoWindow.close();
             activeInfoWindow.setContent(data);
             activeInfoWindow.open(map, activeMarker);
-            activeMarker.setIcon(greenMarkerImage);
+            activeMarker.setIcon(adoptedMarkerImage);
             activeMarker.setAnimation(google.maps.Animation.BOUNCE);
           }
         });
@@ -449,7 +454,7 @@ $(function() {
               activeInfoWindow.close();
               activeInfoWindow.setContent(data);
               activeInfoWindow.open(map, activeMarker);
-              activeMarker.setIcon(redMarkerImage);
+              activeMarker.setIcon(notAdoptedMarkerImage);
               activeMarker.setAnimation(null);
             }
           });
