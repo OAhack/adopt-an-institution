@@ -25,6 +25,8 @@
     .form-actions
       = f.submit t("buttons.sign_up"), :class => "btn btn-primary"
     %p
+      = t("defaults.about", :about => link_to(t("titles.about"), "#about", :id => "about_link", :"data-toggle" => "modal")).html_safe
+    %p
       = t("defaults.tos", :tos => link_to(t("titles.tos"), "#tos", :id => "tos_link", :"data-toggle" => "modal")).html_safe
   %fieldset#user_sign_in_fields{:style => "display: none;"}
     .control-group
@@ -45,7 +47,9 @@
     %p
       = link_to t("links.remembered_password"), "#", :id => "user_remembered_password_link"
 = render :partial => "sidebar/tos"
+= render :partial => "sidebar/about"
 :javascript
   $(function() {
     $('#user_email').focus();
   });
+

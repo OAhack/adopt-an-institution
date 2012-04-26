@@ -189,6 +189,15 @@ a.btn {
   margin-bottom: 10px;
 }
 
+#about {
+  text-align: left;
+}
+
+#about p {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
 .upcase {
   text-transform: uppercase;
 }

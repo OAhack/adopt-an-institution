@@ -21,6 +21,7 @@ en:
     public: "(visible to others)"
     required: "(required)"
   defaults:
+    about: "%{about}"
     address: "address"
     address_1: "1 City Hall Plaza"
     address_2: "Suite 500"
@@ -73,6 +74,7 @@ en:
     signed_up: "Thanks for signing up!"
     stolen: "%{thing} stolen!"
   titles:
+    about: "About"
     adopt: "Adopt %{thing}"
     adopted: "%{thing_name} has been adopted"
     byline: "by %{name}"
@@ -83,9 +85,9 @@ en:
     thank_you: "Thank you for adopting %{thing}!"
     tos: "Terms of Service"
   sponsors:
-    built: "Built in Boston"
+    built: ""
     cfa: "Code for America"
-    city: "City of Boston"
+    city: ""
     mayor:
-      name: "Thomas M. Menino"
-      title: "Mayor"
+      name: ""
+      title: ""
