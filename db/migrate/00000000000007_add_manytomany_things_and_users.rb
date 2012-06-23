@@ -8,6 +8,6 @@ class AddManytomanyThingsAndUsers < ActiveRecord::Migration
   end
 
   def down
-    raise ActiveRecord::IrreversibleMigration
+    drop_table :things_users
   end
 end

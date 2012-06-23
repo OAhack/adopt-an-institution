@@ -1,7 +1,8 @@
 class Thing < ActiveRecord::Base
   include Geokit::Geocoders
   validates_presence_of :lat, :lng
-  has_and_belongs_to_many :user
+  has_many :affiliations
+  has_many :users, :through => :affiliations
   has_many :reminders
 
   def self.find_closest(lat, lng, limit=10)
