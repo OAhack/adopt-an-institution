@@ -6,6 +6,6 @@ class AddRememberPasswordSentAtToUsers < ActiveRecord::Migration
   end
 
   def down
-    raise ActiveRecord::IrreversibleMigration
+    remove_column :users, :reset_password_sent_at
   end
 end
