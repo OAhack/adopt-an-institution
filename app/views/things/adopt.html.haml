@@ -1,4 +1,9 @@
 %h2
+ = t("titles.adopt", :thing => @thing.name)
+
+= render :partial => 'things/list_users'
+
+%h2
   = t("titles.adopt", :thing => @thing.name)
 = form_for :thing, :url => things_path, :method => :put, :html => {:id => "adoption_form"} do |f|
   = f.hidden_field "id"

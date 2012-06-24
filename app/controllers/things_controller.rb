@@ -11,11 +11,15 @@ class ThingsController < ApplicationController
   end
 
   def update
+    puts params
     @thing = Thing.find(params[:id])
-    if @thing.update_attributes(params[:thing])
-      respond_with @thing
-    else
-      render(:json => {"errors" => @thing.errors}, :status => 500)
-    end
+    @user = User.find(current_user.id)
+    @thing.users << @user
+    @thing.save
+    respond_with @thing
+    # TODO: Figure out what an error would be
+    # else
+    #   render(:json => {"errors" => @thing.errors}, :status => 500)
+    # end
   end
 end

@@ -1,0 +1,3 @@
+%ul
+  = @thing.affiliations.each do |affiliation|
+    %li= "#{affiliation.user.name}"
